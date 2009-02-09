@@ -10,8 +10,8 @@ Example
 
   # app/views/posts.html.erb:
 
-  <% javascript_include_action 'post_show' -%>
-  <% stylesheet_link_action 'posts' -%>
+  <% javascript_include 'post_show' -%>
+  <% stylesheet_link 'posts' -%>
 
 
   # app/views/layouts/application.html.erb:
