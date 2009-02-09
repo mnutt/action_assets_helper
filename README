@@ -1,0 +1,28 @@
+ActionAssetsHelper
+==================
+
+Convenient helper plugin to add javascripts and stylesheets via individual
+views, and have them appear in the document head.
+
+
+Example
+=======
+
+  # app/views/posts.html.erb:
+
+  <% javascript_include_action 'post_show' -%>
+  <% stylesheet_link_action 'posts' -%>
+
+
+  # app/views/layouts/application.html.erb:
+
+  <head>
+    ...
+    <%= javascript_include_actions -%>
+    <%= stylesheet_link_actions -%>
+  </head>
+
+This specifies action-specific javascript and stylesheet in the view, while the
+tags are rendered in the layout.
+
+Copyright (c) 2009 Michael Nutt and Justin Camerer, released under the MIT license
