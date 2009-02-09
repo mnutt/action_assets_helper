@@ -1,1 +1,1 @@
-ActionView::Base.send :include, ActionAssetHelper
+ActionView::Base.send :include, ActionAssetsHelper
