@@ -2,11 +2,13 @@ module ActionAssetsHelper
   def javascript_include(*scripts)
     @javascript_includes ||= []
     @javascript_includes << scripts
+    @javascript_includes.flatten!.uniq!
   end
   
   def stylesheet_link(*stylesheets)
     @stylesheet_links ||= []
     @stylesheet_links << stylesheets
+    @stylesheet_links.flatten!.uniq!
   end
 
   def javascript_include_actions

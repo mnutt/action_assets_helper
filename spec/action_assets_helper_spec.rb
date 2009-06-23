@@ -20,6 +20,12 @@ describe ActionAssetsHelper do
     javascript_include_actions.should_not be
   end
 
+  it 'should not include duplicate javascripts' do
+    javascript_include("posts_show")
+    javascript_include("posts_show", "posts_show")
+    javascript_include_actions.should == javascript_include_tag("posts_show")
+  end
+
   it 'should include a single css link from an action' do
     stylesheet_link("posts_show")
     stylesheet_link_actions.should == stylesheet_link_tag("posts_show")
@@ -32,5 +38,11 @@ describe ActionAssetsHelper do
 
   it 'should not include anything if no css links given' do
     stylesheet_link_actions.should_not be
+  end
+
+  it 'should not include duplicate stylesheets' do
+    stylesheet_link("posts_show")
+    stylesheet_link("posts_show", "posts_show")
+    stylesheet_link_actions.should == stylesheet_link_tag("posts_show")
   end
 end
